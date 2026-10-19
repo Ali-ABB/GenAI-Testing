@@ -50,6 +50,13 @@ jobs:
         if: always()
         uses: actions/configure-pages@v5
 
+        - name: Ensure Report Directory Exists
+        if: always()
+        run: |
+          mkdir -p playwright-report
+          if [ ! -f playwright-report/index.html ]; then
+            echo "<h1>GenAI Evaluation Report Not Available</h1>" > playwright-report/index.html
+          fi
       - name: Upload HTML Report Artifact
         if: always()
         uses: actions/upload-pages-artifact@v3
