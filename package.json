@@ -4,7 +4,7 @@
   "description": "Independent GenAI / RAG evaluation framework (Playwright + TypeScript)",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
+    "test:eval": "playwright test tests/groq-golden-eval.spec.ts --project=chromium --reporter=line,html",
     "test:chromium": "playwright test --project=chromium",
     "test:golden": "playwright test tests/groq-golden-eval.spec.ts --project=chromium",
     "report": "playwright show-report"
