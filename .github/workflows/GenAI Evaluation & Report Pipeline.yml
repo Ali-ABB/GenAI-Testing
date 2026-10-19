@@ -45,13 +45,13 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_API_KEY: "dummy-key-not-used"
-        run: npm run test:eval
-
+          run: npx playwright test tests/groq-golden-eval.spec.ts --project=chromium --reporter=line,html
+      
       - name: Setup Pages
         if: always()
         uses: actions/configure-pages@v5
 
-        - name: Ensure Report Directory Exists
+      - name: Ensure Report Directory Exists
         if: always()
         run: |
           mkdir -p playwright-report
