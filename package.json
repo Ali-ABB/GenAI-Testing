@@ -1,0 +1,23 @@
+{
+  "name": "genai-testing-framework",
+  "version": "1.0.0",
+  "description": "Independent GenAI / RAG evaluation framework (Playwright + TypeScript)",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:golden": "playwright test tests/groq-golden-eval.spec.ts --project=chromium",
+    "report": "playwright show-report"
+  },
+  "keywords": ["genai", "playwright", "evaluation"],
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "dotenv": "^18.0.8",
+    "openai": "^7.38.0"
+  },
+  "dependencies": {
+    "groq-sdk": "^1.6.0"
+  }
+}
