@@ -5,8 +5,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  schedule:
-    - cron: '0 0 * * *' # Run nightly at midnight UTC
+ # disabled nightly job temporarily    
+ # schedule:
+  #  - cron: '0 0 * * *' # Run nightly at midnight UTC
   workflow_dispatch:
 
 # Set permissions for GITHUB_TOKEN to deploy to GitHub Pages
